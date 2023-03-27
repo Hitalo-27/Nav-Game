@@ -4,6 +4,7 @@ import navgame.Modelo.Fase;
 
 import javax.swing.*;
 
+//Classe onde o programa é executado
 public class Container extends JFrame {
     public Container(){
         add(new Fase());

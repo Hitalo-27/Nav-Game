@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+//Classe onde é feita toda a logica da fase do jogo
 public class Fase extends JPanel implements ActionListener {
     private Image fundo;
     private Player player;
@@ -72,7 +73,6 @@ public class Fase extends JPanel implements ActionListener {
             graficos.drawImage(player.getImagem(), player.getX(), player.getY(), this);
 
             List<Tiro> tiros = player.getTiros();
-
             for(int i = 0; i < tiros.size(); i++){
                 Tiro m = tiros.get(i);
                 m.load();

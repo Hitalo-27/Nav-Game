@@ -3,12 +3,12 @@ package navgame.Modelo;
 import javax.swing.*;
 import java.awt.*;
 
+//Classe onde é feita toda a configuração dos tiros
 public class Tiro {
     private Image imagem;
     private int x, y;
     private int largura, altura;
     private boolean isVisivel;
-
     private static final int LARGURA = 938;
     private static int VELOCIDADE = 5;
 

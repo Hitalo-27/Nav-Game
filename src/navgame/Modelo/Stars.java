@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
+//Classe onde é feita toda a configuração das estrelas
 public class Stars {
     private Image imagem;
     private int x, y;

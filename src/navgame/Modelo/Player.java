@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
 
+//Classe onde é feita toda a configuração da nave/jogador
 public class Player implements ActionListener {
     private int x,y;
     private int dx,dy;
@@ -70,6 +71,7 @@ public class Player implements ActionListener {
         return new Rectangle(x,y,largura,altura);
     }
 
+    //Configurando as teclas que serão usadas na fase
     public void keyPressed(KeyEvent tecla){
         int codigo = tecla.getKeyCode();
 

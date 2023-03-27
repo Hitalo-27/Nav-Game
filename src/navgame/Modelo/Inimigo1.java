@@ -3,6 +3,7 @@ package navgame.Modelo;
 import javax.swing.*;
 import java.awt.*;
 
+//Classe onde é feita toda a configuração dos inimigos
 public class Inimigo1 {
     private Image imagem;
     private int x, y;
