@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a930ebcf-4b00-4ea8-a1e4-e08936691aa3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navgame/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Fase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Inimigo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Inimigo1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Stars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Stars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Tiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Tiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +63,8 @@
       <updated>1679696317894</updated>
       <workItem from="1679696319063" duration="12957000" />
       <workItem from="1679957823320" duration="837000" />
+      <workItem from="1679958741306" duration="682000" />
+      <workItem from="1679959521572" duration="5137000" />
     </task>
     <servers />
   </component>

@@ -18,13 +18,15 @@ public class Player implements ActionListener {
     private List <Tiro> tiros;
     private boolean isVisivel;
     private boolean isTurbo;
-    private Timer timer;
+    private boolean activeTurbo;
+    private Timer timer, timerDelayTurbo;
 
     public Player(){
         this.x = 100;
         this.y = 100;
         isVisivel = true;
         isTurbo = false;
+        activeTurbo = true;
 
         tiros = new ArrayList<Tiro>();
 
@@ -40,8 +42,10 @@ public class Player implements ActionListener {
         }
 
         if(isTurbo == false){
+            //Função que carrega a imagem original (sem turbo)
             load();
         }
+
     }
 
     public void load(){
@@ -52,18 +56,40 @@ public class Player implements ActionListener {
     }
 
     public void update(){
-        x += dx;
-        y += dy;
+        int vx = x+dx;
+        int vy = y+dy;
+
+        if(vx >= 0 && vx <= 1010){
+            x += dx;
+        }
+
+        if(vy >= 0 && vy <= 541){
+            y += dy;
+        }
     }
 
     public void tiroSimples(){
         this.tiros.add(new Tiro(x+largura, y + (altura/2)));
     }
 
+
     public void turbo(){
-        isTurbo = true;
-        ImageIcon refencia = new ImageIcon("images\\navTurbo.png");
-        imagem = refencia.getImage();
+
+        if(activeTurbo) {
+            isTurbo = true;
+            ImageIcon refencia = new ImageIcon("images\\navTurbo.png");
+            imagem = refencia.getImage();
+            activeTurbo = false;
+
+            //Impede que o turbo seja usado durante 30 segundos apos o uso
+            ActionListener taskPerformer = new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    activeTurbo = true;
+                }
+            };
+            timerDelayTurbo = new Timer(30000 ,taskPerformer);
+            timerDelayTurbo.start();
+        }
 
     }
 
