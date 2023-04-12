@@ -25,6 +25,11 @@ public class Inimigo1 {
         this.largura = imagem.getWidth(null);
         this.altura = imagem.getHeight(null);
     }
+    
+   public Inimigo1 changeSpeed(int num) {
+	   setVELOCIDADE(num);
+	   return null;
+   }
 
     public void update(){
         this.x -= VELOCIDADE;

@@ -20,6 +20,7 @@ public class Player implements ActionListener {
     private boolean isTurbo;
     private boolean activeTurbo;
     private Timer timer, timerDelayTurbo;
+    
 
     public Player(){
         this.x = 100;
@@ -39,11 +40,13 @@ public class Player implements ActionListener {
         if(isTurbo == true){
             turbo();
             isTurbo = false;
+            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(2);
         }
 
         if(isTurbo == false){
             //Função que carrega a imagem original (sem turbo)
             load();
+            
         }
 
     }
@@ -80,6 +83,9 @@ public class Player implements ActionListener {
             ImageIcon refencia = new ImageIcon("images\\navTurbo.png");
             imagem = refencia.getImage();
             activeTurbo = false;
+            
+            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(12);
+            
 
             //Impede que o turbo seja usado durante 30 segundos apos o uso
             ActionListener taskPerformer = new ActionListener() {
@@ -93,7 +99,7 @@ public class Player implements ActionListener {
 
     }
 
-    public Rectangle getBounds(){
+	public Rectangle getBounds(){
         return new Rectangle(x,y,largura,altura);
     }
 
@@ -102,13 +108,18 @@ public class Player implements ActionListener {
         int codigo = tecla.getKeyCode();
 
         if(codigo == KeyEvent.VK_SPACE){
-            turbo();
+            turbo();  
         }
 
         if(codigo == KeyEvent.VK_A){
             if(isTurbo == false){
                 tiroSimples();
             }
+        }
+        
+        if(codigo == KeyEvent.VK_R){
+        	
+        	
         }
 
         if(codigo == KeyEvent.VK_UP){
@@ -147,6 +158,7 @@ public class Player implements ActionListener {
         if(codigo == KeyEvent.VK_RIGHT){
             dx=0;
         }
+        
     }
 
     public int getX() {

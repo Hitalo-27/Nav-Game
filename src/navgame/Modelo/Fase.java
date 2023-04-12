@@ -87,9 +87,28 @@ public class Fase extends JPanel implements ActionListener {
         }else{
             ImageIcon fimJogo = new ImageIcon("images\\gameover.png");
             graficos.drawImage(fimJogo.getImage(), 0, 0, null);
+            
+            restart();
+            
         }
 
         g.dispose();
+    }
+    
+    public void restart() {
+    	setFocusable(true);
+        setDoubleBuffered(true);
+        ImageIcon referencia = new ImageIcon("images\\background.png");
+        fundo = referencia.getImage();
+
+        player = new Player();
+        player.load();
+
+        addKeyListener(new TecladoAdapter());
+
+        inicializaInimigos();
+        inicializaStars();
+        emJogo = true;
     }
 
     @Override
