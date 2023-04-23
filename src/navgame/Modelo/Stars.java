@@ -53,18 +53,6 @@ public class Stars {
         return isVisivel;
     }
 
-    public static int getVELOCIDADE() {
-        return VELOCIDADE;
-    }
-
-    public void setVisivel(boolean visivel) {
-        isVisivel = visivel;
-    }
-
-    public static void setVELOCIDADE(int VELOCIDADE) {
-        Stars.VELOCIDADE = VELOCIDADE;
-    }
-
     public Image getImagem() {
         return imagem;
     }

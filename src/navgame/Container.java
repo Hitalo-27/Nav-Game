@@ -14,6 +14,7 @@ public class Container extends JFrame {
         setLocationRelativeTo(null);
         this.setResizable(false);
         setVisible(true);
+
     }
 
     public static void main(String []args){

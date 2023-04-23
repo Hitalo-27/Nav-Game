@@ -19,13 +19,14 @@ public class Inimigo1 {
     }
 
     public void load(){
-        ImageIcon referencia = new ImageIcon("images\\inimigo.png");
+        ImageIcon referencia = new ImageIcon("images\\naveini.png");
         imagem = referencia.getImage();
 
         this.largura = imagem.getWidth(null);
         this.altura = imagem.getHeight(null);
     }
-    
+
+
    public Inimigo1 changeSpeed(int num) {
 	   setVELOCIDADE(num);
 	   return null;

@@ -13,10 +13,12 @@ import java.util.List;
 public class Fase extends JPanel implements ActionListener {
     private Image fundo;
     private Player player;
+
     private Timer timer;
     private List<Inimigo1> inimigo1;
     private List<Stars> stars;
     private boolean emJogo;
+    private List<Explosao> explosao;
 
     public Fase(){
         setFocusable(true);
@@ -40,11 +42,13 @@ public class Fase extends JPanel implements ActionListener {
     public void inicializaInimigos(){
         int cordenadas[] = new int [40];
         inimigo1 = new ArrayList<Inimigo1>();
+        explosao = new ArrayList<Explosao>();
 
         for (int i = 0; i < cordenadas.length; i++) {
             int x = (int) (Math.random() * 8000 + 1000);
             int y = (int) (Math.random() * 600 + 20);
             inimigo1.add(new Inimigo1(x, y));
+            explosao.add(new Explosao(x, y));
         }
     }
 
@@ -58,6 +62,7 @@ public class Fase extends JPanel implements ActionListener {
             stars.add(new Stars(x, y));
         }
     }
+
 
     public void paint(Graphics g){
         Graphics2D graficos = (Graphics2D) g;
@@ -83,18 +88,23 @@ public class Fase extends JPanel implements ActionListener {
                 Inimigo1 in = inimigo1.get(o);
                 in.load();
                 graficos.drawImage(in.getImagem(), in.getX(), in.getY(), this);
+
+                Explosao ex = explosao.get(o);
+                graficos.drawImage(ex.getImagem(), ex.getX(), ex.getY(), this);
+
+
             }
         }else{
             ImageIcon fimJogo = new ImageIcon("images\\gameover.png");
             graficos.drawImage(fimJogo.getImage(), 0, 0, null);
-            
+
             restart();
-            
+
         }
 
         g.dispose();
     }
-    
+
     public void restart() {
     	setFocusable(true);
         setDoubleBuffered(true);
@@ -142,7 +152,7 @@ public class Fase extends JPanel implements ActionListener {
                 }
 
                 if(player.isTurbo() == false){
-                    tiros.get(i).setVELOCIDADE(2);
+                    tiros.get(i).setVELOCIDADE(8);
                 }
 
             } else {
@@ -152,9 +162,15 @@ public class Fase extends JPanel implements ActionListener {
 
         for (int o = 0; o < inimigo1.size(); o++){
             Inimigo1 in = inimigo1.get(o);
+            Explosao ex = explosao.get(o);
             if(in.isVisivel()){
                 in.update();
+                ex.update();
             }else {
+                ex.setX(in.getX());
+                ex.setY(in.getY());
+                ex.load();
+                ex.update();
                 inimigo1.remove(o);
             }
         }
@@ -187,9 +203,10 @@ public class Fase extends JPanel implements ActionListener {
             Tiro tempTiro = tiros.get(j);
             formaTiro = tempTiro.getBounds();
             for (int o = 0; o < inimigo1.size(); o++){
-                Inimigo1 tempInimigo1 = inimigo1.get(j);
+                Inimigo1 tempInimigo1 = inimigo1.get(o);
                 formaInimigo1 = tempInimigo1.getBounds();
                 if(formaTiro.intersects(formaInimigo1)){
+                    player.load();
                     tempInimigo1.setVisivel(false);
                     tempTiro.setVisivel(false);
                 }

@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a930ebcf-4b00-4ea8-a1e4-e08936691aa3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/images/explosao.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/navgame/Modelo/Explosao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/inimigo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/navTurbo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tiro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navgame/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Fase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Inimigo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Inimigo1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Stars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Stars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navgame/Modelo/Tiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/navgame/Modelo/Tiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +58,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projetos\java\NavGame\images" />
       <recent name="D:\Projetos\java\NavGame\res" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -65,6 +77,9 @@
       <workItem from="1679957823320" duration="837000" />
       <workItem from="1679958741306" duration="682000" />
       <workItem from="1679959521572" duration="5137000" />
+      <workItem from="1680372254663" duration="521000" />
+      <workItem from="1682205681700" duration="14472000" />
+      <workItem from="1682260485437" duration="2628000" />
     </task>
     <servers />
   </component>

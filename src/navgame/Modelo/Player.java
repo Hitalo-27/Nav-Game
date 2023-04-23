@@ -41,6 +41,7 @@ public class Player implements ActionListener {
             turbo();
             isTurbo = false;
             Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(2);
+            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(2);
         }
 
         if(isTurbo == false){
@@ -52,7 +53,7 @@ public class Player implements ActionListener {
     }
 
     public void load(){
-        ImageIcon refencia = new ImageIcon("images\\nav.png");
+        ImageIcon refencia = new ImageIcon("images\\nave.png");
         imagem = refencia.getImage();
         altura = imagem.getHeight(null);
         largura = imagem.getWidth(null);
@@ -80,11 +81,12 @@ public class Player implements ActionListener {
 
         if(activeTurbo) {
             isTurbo = true;
-            ImageIcon refencia = new ImageIcon("images\\navTurbo.png");
+            ImageIcon refencia = new ImageIcon("images\\naveturbo.png");
             imagem = refencia.getImage();
             activeTurbo = false;
             
             Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(12);
+            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(12);
             
 
             //Impede que o turbo seja usado durante 30 segundos apos o uso
