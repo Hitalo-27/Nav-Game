@@ -2,6 +2,8 @@ package navgame.Modelo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import javax.sound.sampled.*;
 
 //Classe onde é feita toda a configuração dos inimigos
 public class Explosao {
@@ -18,14 +20,29 @@ public class Explosao {
         isVisivel = false;
     }
 
-    public void load(){
+	public void load(){
+    	//Chama a função que emite o som
+        ShootSound();
         ImageIcon referencia = new ImageIcon("images\\explosao.gif");
         imagem = referencia.getImage();
 
         this.largura = imagem.getWidth(null);
         this.altura = imagem.getHeight(null);
     }
-
+    
+    public void ShootSound() {
+    	try {
+    		//Instãncia o audio
+    		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds\\explosion.wav").getAbsoluteFile());
+    		Clip clip = AudioSystem.getClip();
+    		clip.open(audioInputStream);
+    		//Dá play no som
+    		clip.start();
+    	} catch(Exception ex) {
+    		System.out.println("Erro ao executar o arquvio de som!");
+    		ex.printStackTrace();
+    	}
+    }
 
     public Explosao changeSpeed(int num) {
         setVELOCIDADE(num);

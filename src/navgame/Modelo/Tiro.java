@@ -2,6 +2,11 @@ package navgame.Modelo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import javax.sound.sampled.*;
+
 
 //Classe onde é feita toda a configuração dos tiros
 public class Tiro {
@@ -11,11 +16,31 @@ public class Tiro {
     private boolean isVisivel;
     private static final int LARGURA = 1124;
     private static int VELOCIDADE = 8;
+    
 
     public Tiro(int x, int y){
-        this.x = x;
+    	this.x = x;
         this.y = y;
         isVisivel = true;
+        
+        // Chama a função que emite o som
+        ShootSound();
+            
+    }
+    
+    void ShootSound() {
+    	try {
+    		//Instãncia o audio
+    		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds\\shoot.wav").getAbsoluteFile());
+    		Clip clip = AudioSystem.getClip();
+    		clip.open(audioInputStream);
+    		//Dá play no som
+    		clip.start();
+    		clip.loop(0);
+    	} catch(Exception ex) {
+    		System.out.println("Erro ao executar o arquvio de som!");
+    		ex.printStackTrace();
+    	}
     }
 
     public void load(){
