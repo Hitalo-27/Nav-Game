@@ -40,13 +40,13 @@ public class Fase extends JPanel implements ActionListener {
     }
 
     public void inicializaInimigos(){
-        int cordenadas[] = new int [40];
+        int cordenadas[] = new int [7000];
         inimigo1 = new ArrayList<Inimigo1>();
         explosao = new ArrayList<Explosao>();
 
         for (int i = 0; i < cordenadas.length; i++) {
-            int x = (int) (Math.random() * 8000 + 1000);
-            int y = (int) (Math.random() * 600 + 20);
+            int x = (int) (Math.random() * 1000000 + 1024);
+            int y = (int) (Math.random() * 600);
             inimigo1.add(new Inimigo1(x, y));
             explosao.add(new Explosao(x, y));
         }
@@ -57,8 +57,8 @@ public class Fase extends JPanel implements ActionListener {
         stars = new ArrayList<Stars>();
 
         for (int i = 0; i < cordenadas.length; i++) {
-            int x = (int) (Math.random() * 1124 + 0);
-            int y = (int) (Math.random() * 700 + 0);
+            int x = (int) (Math.random() * 1124);
+            int y = (int) (Math.random() * 700);
             stars.add(new Stars(x, y));
         }
     }
@@ -97,9 +97,6 @@ public class Fase extends JPanel implements ActionListener {
         }else{
             ImageIcon fimJogo = new ImageIcon("images\\gameover.png");
             graficos.drawImage(fimJogo.getImage(), 0, 0, null);
-
-            restart();
-
         }
 
         g.dispose();
@@ -217,6 +214,12 @@ public class Fase extends JPanel implements ActionListener {
     private class TecladoAdapter extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e){
+        	int codigo = e.getKeyCode();
+            
+            if(codigo == KeyEvent.VK_R){
+            	restart();
+            }
+            
             player.keyPressed(e);
         }
 

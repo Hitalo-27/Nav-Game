@@ -40,8 +40,8 @@ public class Player implements ActionListener {
         if(isTurbo == true){
             turbo();
             isTurbo = false;
-            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(2);
-            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(2);
+            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(8);
+            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(8);
         }
 
         if(isTurbo == false){
@@ -85,8 +85,8 @@ public class Player implements ActionListener {
             imagem = refencia.getImage();
             activeTurbo = false;
             
-            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(12);
-            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(12);
+            Inimigo1 boostSpeed = new Inimigo1(0, 0).changeSpeed(18);
+            Explosao boostSpeed2 = new Explosao(0, 0).changeSpeed(18);
             
 
             //Impede que o turbo seja usado durante 30 segundos apos o uso
